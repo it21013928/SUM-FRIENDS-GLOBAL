@@ -1,0 +1,708 @@
+/**
+* [Table of contents]
+ *
+ * [&. Content / #key]
+ * [Let press Ctrl + f and type of paste the key, then press Enter to search the content ]
+ *
+ * Summary:
+ *
+ *  0. VARIABLE LESS
+    0.1. Color
+ *  1. MIXINS
+ */
+
+/*----------  0.1. Color  ----------*/
+
+a:active,
+a:focus,
+a:hover {
+    color: #2aacff;
+}
+
+.spinner > div {
+    background-color: #2aacff;
+}
+
+.bg-transparent .header-topbar .topbar-left li:hover i,
+.bg-transparent .header-topbar .topbar-left li:hover span {
+    color: #2aacff;
+}
+
+.bg-transparent .header-main.header-fixed .nav-search form .searchbutton {
+    background-color: #2aacff;
+}
+
+.bg-white .header-topbar .topbar-left li:hover i,
+.bg-white .header-topbar .topbar-left li:hover span {
+    color: #2aacff;
+}
+
+.header-03 .header-topbar .btn-menu:hover .icons,
+.header-03 .header-topbar .btn-menu:hover .text {
+    color: #2aacff;
+}
+
+/*----------  2.1. Topbar Header  ----------*/
+
+.header-topbar a:hover,
+.header-topbar p:hover,
+.header-topbar span:hover {
+    color: #2aacff;
+}
+
+.header-topbar .topbar-left > li:hover i,
+.header-topbar .topbar-left > li:hover span {
+    color: #2aacff;
+}
+
+.navigation .nav-links li.active .main-menu,
+.navigation .nav-links li:hover .main-menu {
+    color: #2aacff;
+}
+
+.navigation .nav-links li:hover .main-menu .icons-dropdown i {
+    color: #2aacff;
+}
+
+.navigation .nav-links .main-menu:after,
+.navigation .nav-links .main-menu:before {
+    background-color: #2aacff;
+}
+
+.bg-transparent .navigation .nav-links li.active .main-menu,
+.bg-transparent .navigation .nav-links li:hover .main-menu {
+    color: #2aacff !important;
+}
+
+.bg-white .navigation .nav-links li.active .main-menu,
+.bg-white .navigation .nav-links li:hover .main-menu {
+    color: #2aacff !important;
+}
+
+.dropdown-menu-1,
+.dropdown-menu-2 {
+    border-bottom: 2px solid #2aacff;
+}
+
+.wrapper-mobile-nav {
+    background: #2aacff;
+}
+
+.wrapper-mobile-nav .header-main .login-widget .item:hover {
+    background-color: #2aacff;
+}
+
+.menu-mobile {
+    background-color: #2aacff;
+}
+
+.menu-mobile .main-menu {
+    background-color: #2aacff;
+}
+
+.menu-mobile .main-menu:active,
+.menu-mobile .main-menu:hover {
+    background-color: #2aacff;
+}
+
+/*----------  3.3. Both Sidebar  ----------*/
+
+.contact-us-widget .info-list ul li .link:hover {
+    color: #2aacff;
+}
+
+.form-email .btn-email {
+    background-color: #2aacff;
+}
+
+.booking-widget ul li .link:before {
+    color: #2aacff;
+}
+
+.booking-widget ul li:hover .link {
+    color: #2aacff;
+}
+
+.explore-widget ul li:hover .link,
+.top-deals-widget ul li:hover .link {
+    color: #2aacff;
+}
+
+/*----------   Find     ---------*/
+
+.find-widget {
+    background-color: #2aacff;
+}
+
+.find-widget .submit-btn-wrapper .submit-btn {
+    color: #2aacff;
+}
+
+.find-widget .submit-btn-wrapper .text {
+    color: #2aacff;
+}
+
+.tab-search-condensed {
+    background-color: #2aacff;
+}
+
+/*----------    Flight Time    ---------*/
+
+.flight-time-widget .flight-time-visual-widget .visual .bar .arrive.indicator,
+.flight-time-widget .flight-time-visual-widget .visual .bar .depart.indicator {
+    background-color: #2aacff;
+}
+
+/*----------      Price      ---------*/
+
+.price-widget .nstSlider .leftGrip.indicator,
+.price-widget .nstSlider .rightGrip.indicator {
+    background-color: #2aacff;
+}
+
+/*---------- Tab search  ---------- */
+
+.tab-search .tab-btn-wrapper .tab-btn:active,
+.tab-search .tab-btn-wrapper .tab-btn:focus,
+.tab-search .tab-btn-wrapper .tab-btn:hover {
+    background-color: #2aacff;
+}
+
+.tab-search .tab-btn-wrapper.active .tab-btn {
+    background-color: #2aacff;
+}
+
+.tab-search-default .tab-btn-wrapper .tab-btn i {
+    color: #2aacff;
+}
+
+.tab-search-default .tab-content-bg {
+    background-color: #2aacff;
+}
+
+.tab-search-condensed .tab-btn-wrapper .tab-btn {
+    color: #2aacff;
+}
+
+.tab-search-condensed .tab-btn-wrapper .tab-btn i {
+    color: #2aacff;
+}
+
+/*----------  2.3. Flight Date Selection  ---------*/
+
+.fds-widget .price-select.yellow {
+    background-color: #2aacff;
+}
+
+/*----------  2.7. Single Flight Result  ---------*/
+
+.single-flight-result form.flight-class .class-selection-wrapper label.radio-box span.text-wrapper span.price {
+    color: #2aacff;
+}
+
+/*------------  2.11. Social  -----------*/
+
+.social-widget ul li a.social-icon:hover {
+    border-color: #2aacff;
+    background-color: #2aacff;
+}
+
+/*==============================
+ =======     FOOTER     =======
+==============================*/
+
+/*----------  4.1. Main Footer  ----------*/
+
+.bg-blue-gradient .link:hover {
+    color: #2aacff !important;
+}
+
+/*----------  4.2. subscribe email  ----------*/
+
+.subscribe-email {
+    background-color: #2aacff;
+}
+
+.form-subscribe-email .btn-email {
+    color: #2aacff;
+}
+
+.page-title-wrapper .breadcrumb li .link:hover {
+    color: #2aacff;
+}
+
+.page-title-wrapper .breadcrumb li.active .link:after {
+    background-color: #2aacff;
+}
+
+.page-title-wrapper .price .number {
+    color: #2aacff;
+}
+
+.page-title-wrapper .price .unit {
+    color: #2aacff;
+}
+
+/****    COMPONENTS    *****/
+
+/*----------  1.1. Banner  ----------*/
+
+.page-title-wrapper .breadcrumb {
+    border-bottom: 1px solid #2aacff;
+}
+
+.page-title-wrapper .breadcrumb li .link:hover {
+    color: #2aacff;
+}
+
+.page-title-wrapper .price .number {
+    color: #2aacff;
+}
+
+.page-title-wrapper .price .unit {
+    color: #2aacff;
+}
+
+/*----------  1.2. Page Title & Button & ...  ----------*/
+
+.group-title .sub-title .icons:after {
+    background-color: #2aacff;
+}
+
+.title-style-2:after {
+    background-color: #2aacff;
+}
+
+.btn.btn-maincolor {
+    border: 1px solid #2aacff;
+    background-color: #2aacff;
+}
+
+.btn.btn-gray:hover {
+    border: 1px solid #2aacff;
+    background-color: #2aacff;
+}
+
+.btn-slide {
+    color: #2aacff;
+}
+
+.btn-slide .text {
+    color: #2aacff;
+}
+
+.btn-slide .icons {
+    color: #2aacff;
+}
+
+.btn-slide:before {
+    color: #2aacff;
+}
+
+#back-top .link {
+    color: #2aacff;
+    border: 2px solid #2aacff;
+}
+
+#back-top .link:hover {
+    background-color: #2aacff;
+}
+
+.stars:after {
+    color: #2aacff;
+}
+
+.label-sale {
+    background-color: #2aacff;
+}
+
+/*----------  1.3. Main layout  ----------*/
+
+.tours-layout .image-wrapper .title-wrapper .title:before {
+    background: #2aacff;
+}
+
+.tours-layout .image-wrapper .title-wrapper .title:hover {
+    color: #2aacff;
+}
+
+.tours-layout .content-wrapper .list-info li .link:hover {
+    background-color: #2aacff;
+}
+
+.tours-layout .content-wrapper > .content .title .price {
+    color: #2aacff;
+}
+
+.tours-layout .content-wrapper > .content .group-btn-tours .left-btn:hover,
+.tours-layout .content-wrapper > .content .group-btn-tours .right-btn:hover {
+    background-color: #2aacff;
+}
+
+.hotels-layout .image-wrapper .title-wrapper .title:before {
+    background: #2aacff;
+}
+
+.hotels-layout .image-wrapper .title-wrapper .title:hover {
+    color: #2aacff;
+}
+
+.hotels-layout .content-wrapper .list-info .link:hover {
+    background-color: #2aacff;
+}
+
+.hotels-layout .content-wrapper .list-info .share-social-list .link-social:hover {
+    background-color: #2aacff;
+}
+
+.hotels-layout .content-wrapper > .content .title .price {
+    color: #2aacff;
+}
+
+.hotels-layout .content-wrapper > .content .group-btn-tours:hover {
+    background-color: #2aacff;
+}
+
+.new-layout .content-wrapper .title:hover {
+    color: #2aacff;
+}
+
+.new-layout .content-wrapper .info li .link:hover {
+    color: #2aacff;
+}
+
+.cruises-layout .content-wrapper .title:hover {
+    color: #2aacff;
+}
+
+.cruises-layout .content-wrapper .price {
+    color: #2aacff;
+}
+
+.car-rent-layout .content-wrapper .title:hover {
+    color: #2aacff;
+}
+
+.car-rent-layout .content-wrapper .price {
+    color: #2aacff;
+}
+
+.special-offer-layout .image-wrapper .title-wrapper .title:before {
+    background: #2aacff;
+}
+
+.special-offer-layout .image-wrapper .title-wrapper .title:hover {
+    color: #2aacff;
+}
+
+.mozilla5 .homepage-default .group-title .title,
+.safari .homepage-default .group-title .title {
+    -webkit-animation: color-text 5s infinite;
+
+    background: linear-gradient(to right, #ffffff 0%, #ffffff 15%, #ffffff 35%, #ffffff 50%, #ffffff 85%, #2aacff 90%, #ffffff 100%);
+    -webkit-background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+}
+
+.homepage-default .group-btn .btn-click {
+    color: #2aacff;
+}
+
+.homepage-default .group-btn .btn-click .icons {
+    color: #2aacff;
+}
+
+.homepage-04 .form-subscribe-email .btn-email {
+    background-color: #2aacff;
+}
+
+.box-media:hover .icons {
+    border: 1px solid #2aacff;
+    background: #2aacff;
+}
+
+.tours-wrapper .tours-list .slick-dots li button:hover {
+    border: 1px solid #2aacff;
+}
+
+.tours-wrapper .tours-list .slick-dots li button:hover:before {
+    color: #2aacff;
+}
+
+.tours-wrapper .tours-list .slick-dots li.slick-active button {
+    border: 1px solid #2aacff;
+}
+
+.tours-wrapper .tours-list .slick-dots li.slick-active button:before {
+    color: #2aacff;
+}
+
+.travelers .traveler-list .slick-dots li button:hover {
+    border: 1px solid #2aacff;
+}
+
+.travelers .traveler-list .slick-dots li button:hover:before {
+    color: #2aacff;
+}
+
+.travelers .traveler-list .slick-dots li.slick-active button {
+    border: 1px solid #2aacff;
+}
+
+.travelers .traveler-list .slick-dots li.slick-active button:before {
+    color: #2aacff;
+}
+
+.traveler .wrapper-content .name {
+    color: #2aacff;
+}
+
+.news .news-list .slick-dots li button:hover {
+    border: 1px solid #2aacff;
+}
+
+.news .news-list .slick-dots li button:hover:before {
+    color: #2aacff;
+}
+
+.news .news-list .slick-dots li.slick-active button {
+    border: 1px solid #2aacff;
+}
+
+.news .news-list .slick-dots li.slick-active button:before {
+    color: #2aacff;
+}
+
+.text-salebox .text-left .sale-box .number {
+    color: #2aacff;
+}
+
+.text-salebox .text-left .sale-box .sup-1 {
+    color: #2aacff;
+}
+
+.a-fact-image-wrapper .a-fact-image .icons:hover {
+    border: 2px solid #2aacff;
+    background: #2aacff;
+}
+
+.contact-box {
+    background-color: #2aacff;
+}
+
+/*----------- blog detail ----------*/
+
+.item-blog-detail .blog-text .sideline:after {
+    background-color: #2aacff;
+}
+
+.item-blog-detail .blog-text .blog-comment .comment-list .media-right .btn.btn-crystal:hover {
+    color: #2aacff;
+}
+
+.stars-rating a.star-1:before,
+.stars-rating a.star-2:before,
+.stars-rating a.star-3:before,
+.stars-rating a.star-4:before,
+.stars-rating a.star-5:before {
+    color: #2aacff;
+}
+
+/*----------  Tour View  ----------*/
+
+.schedule-block .element {
+    background-color: #2aacff;
+}
+
+.timeline-title span {
+    background-color: #2aacff;
+}
+
+/* Gallery Block */
+
+/* Expert Block */
+
+.contact-list-media:hover .icons {
+    border: 1px solid #2aacff;
+    background: #2aacff;
+}
+
+/*----------  Hotel View  ----------*/
+
+.map-block .map-info p.mail:hover a {
+    color: #2aacff;
+}
+
+.map-block .map-info .footer-block {
+    background-color: #2aacff;
+}
+
+.map-block .map-info .footer-block .btn-open-map:hover {
+    border: 1px solid #2aacff;
+}
+
+/*----------  3.2. tour result  ----------*/
+
+.list-continent-wrapper .continent:before {
+    border: 1px solid #2aacff;
+    background-color: #2aacff;
+}
+
+.special-offer-list .slick-dots li button:hover {
+    border: 1px solid #2aacff;
+}
+
+.special-offer-list .slick-dots li button:hover:before {
+    color: #2aacff;
+}
+
+.special-offer-list .slick-dots li.slick-active button {
+    border: 1px solid #2aacff;
+}
+
+.special-offer-list .slick-dots li.slick-active button:before {
+    color: #2aacff;
+}
+
+.our-content .our-icon {
+    color: #2aacff;
+}
+
+.content-expert .caption-expert {
+    background-color: #2aacff;
+}
+
+.content-tours .wrapper-thin:hover .icon-thin {
+    color: #2aacff;
+}
+
+.content-tours .wrapper-thin:hover .tours-title {
+    color: #2aacff;
+}
+
+/*----------  contact  ----------*/
+
+.content-organization:hover .wrapper-img {
+    border: 1px solid #2aacff;
+}
+
+.content-organization .organization-title .title:hover {
+    color: #2aacff;
+}
+
+.content-organization .content-widget .link:hover {
+    color: #2aacff;
+}
+
+/*----------  3.2. Flight Results  ----------*/
+
+.flight-result-main .date-selection .btn-wrapper .btn-select:hover {
+    color: #2aacff;
+    border-color: #2aacff;
+}
+
+/*----------  3.2. Blog  ----------*/
+
+/* SECTION */
+
+/*----------  3.2.1 Blog Post  ----------*/
+
+.blog-post .blog-content .heading:hover {
+    color: #2aacff;
+}
+
+.blog-post .blog-content .quote-wrapper .quote:hover {
+    color: #2aacff;
+}
+
+/*----------  car-detail  ----------*/
+
+.wrapper-car-result .car-wigdet .car-item:hover {
+    color: #2aacff;
+}
+
+.car-price-wrapper {
+    background-color: #2aacff;
+}
+
+.wrapper-driver-detail .driver-title {
+    background-color: #2aacff;
+}
+
+.form-check-img .input-check:checked ~ .img-radio:before {
+    border: 2px solid #2aacff;
+}
+
+/*----------  faq  ----------*/
+
+.wrapper-accordion .panel.active .panel-heading {
+    background-color: #2aacff;
+}
+
+.wrapper-caption-team .wrapper-team-title .team-title:hover {
+    color: #2aacff;
+}
+
+.wrapper-caption-team .wrapper-team-title .team-title-andress .item-andress:hover {
+    color: #2aacff;
+}
+
+.team-purchase .title-yellow {
+    color: #2aacff;
+}
+
+.main-position .list-info .link:hover {
+    background-color: #2aacff;
+}
+
+.group-number .about-us-list li:hover .text {
+    color: #2aacff;
+}
+
+.group-number .about-us-list li:hover .text:after {
+    color: #2aacff;
+}
+
+.group-number .about-us-list li:hover .text-number {
+    color: #2aacff;
+}
+
+.wrapper-llc .list-llc .item:hover {
+    color: #2aacff;
+}
+
+.view-more .more {
+    color: #2aacff;
+}
+
+/*=============================
+ ======     END PAGE     ======
+ =============================*/
+
+/*=============================
+ ======      PLUGIN      ======
+ =============================*/
+
+/*----------  4.1. jQuery Plugin 1  ----------*/
+
+/*----------  4.1. jQuery Plugin 1  ----------*/
+
+.datepicker thead .next:hover:before,
+.datepicker thead .prev:hover:before {
+    background-color: #2aacff;
+}
+
+.datepicker tbody td.day.active:before,
+.datepicker tbody td.day.range-end:before,
+.datepicker tbody td.day.range-start:before {
+    background-color: #2aacff;
+}
+
+/*=============================
+ ======      PLUGIN      ======
+ =============================*/
+
+.title-style-2 span {
+    color: #2aacff;
+}

@@ -1,0 +1,155 @@
+{% extends "base.html" %}
+
+{% load wagtailcore_tags wagtailimages_tags static social_share %}
+
+{% block content %}
+
+<div class="main-content">
+    {% image page.banner_image fill-1920x2000 as post_image %}
+    <section class="page-banner blog-detail" style="background-image: linear-gradient(
+        rgba(0, 0, 0, 0.3), 
+        rgba(0, 0, 0, 0.3)
+      ), url({{ post_image.url }});">
+        <div class="container">
+            <div class="page-title-wrapper">
+                <div class="page-title-content">
+                    <ol class="breadcrumb">
+                        <li>
+                            <a href="index.html" class="link home">Home</a>
+                        </li>
+                        <li class="active">
+                            <a href="blog.html" class="link home">Blog</a>
+                        </li>
+                    </ol>
+                    <div class="clearfix"></div>
+                    <h2 class="captions">{{ page.title }}</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="page-main padding-top padding-bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 main-left">
+                    <div class="item-blog-detail">
+                        <div class="blog-post blog-text">
+                            <div class="blog-content margin-bottom70">
+                                <div class="row">
+                                    <div class="col-xs-1">
+                                        <div class="date">
+                                            <h1 class="day">{{page.date.day}}</h1>
+                                            <div class="month">{{page.date | date:"M"}}</div>
+                                            <div class="year">{{page.date.year}}</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-11 blog-text">
+                                        <h5 class="meta-info">Posted By :
+                                            {% for authors in page.blog_authors.all %}
+                                                <span>{{ authors.author.name }}</span>
+                                            {% endfor %}
+                                        </h5>
+                                        <div class="blog-descritption">
+                                            {{ page.body|richtext }}
+                                        </div>                                            
+                                    </div>
+                                </div>
+                            </div>
+                            {% if page.categories.all.count %}
+                                <div class="blog-detail-tag tags-widget">
+                                    <span class="content-tag">Categories:</span>
+                                    <div class="content-widget">
+                                        {% for category in page.categories.all %}
+                                            <a href="{% slugurl 'categories' %}?category={{ category }}" class="tag">{{ category }}</a>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                            {% endif %}
+                            {% if page.tags.all.count %}
+                                <div class="blog-detail-tag tags-widget margin-bottom">
+                                    <span class="content-tag">Tags:</span>
+                                    <div class="content-widget">
+                                        {% for tag in page.tags.all %}
+                                            <a href="{% slugurl 'tags' %}?tag={{ tag }}" class="tag">{{ tag }}</a>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                            {% endif %}
+                            {% for authors in page.blog_authors.all %}
+                                <div class="blog-author margin-bottom">
+                                    <div class="media blog-author-content">
+                                        <div class="media-left">
+                                            <a class="media-image">
+                                                {% image authors.author.image fill-120x120 as img %}
+                                                <img src="{{ img.url }}" alt="{{ authors.author.name }}">
+                                            </a>
+                                        </div>
+                                        <div class="media-right">
+                                            <div class="author">{{ authors.author.name }}</div>
+                                            <div class="position">Author</div>
+                                            <p class="des">{{ authors.author.bio }}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 sidebar-widget">
+                    <div class="col-2">
+                        <div class="social-widget widget">
+                            <div class="title-widget">
+                                <div class="title">SHARE</div>
+                            </div>
+                            <div class="content-widget">
+                                <ul class="list-unstyled list-inline">                                            
+                                    <li>{% post_to_facebook object_or_url %}</li>
+                                    <li>{% post_to_twitter "{{ page.title }}" object_or_url %}</li>
+                                    <li>{% save_to_pinterest object_or_url %}</li>
+                                    <li>{% post_to_reddit "{{ page.title }}" object_or_url %}</li>
+                                    <li>{% post_to_whatsapp object_or_url %}</li>
+                                    <li>{% post_to_telegram "{{ page.title }}" object_or_url %}</li>
+                                    <li>{% post_to_linkedin object_or_url %}</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="col-1">
+                            <div class="recent-post-widget widget">
+                                <div class="title-widget">
+                                    <div class="title">RECENT POST</div>
+                                </div>
+                                <div class="content-widget">
+                                    <div class="recent-post-list">
+                                        {% for post in blog_sidebar_list %}
+                                            {% if request.path != post.url %}
+                                                <div class="single-widget-item">
+                                                    <div class="single-recent-post-widget">                                                        
+                                                            <a href="http://127.0.0.1:8000{% pageurl post %}">
+                                                                {% image post.banner_image fill-100x80 as post_image %}
+                                                                <img src="{{ post_image.url }}" alt="{{ post_image.title }}">
+                                                            </a>
+                                                        <div class="post-info">
+                                                            <div class="meta-info">
+                                                                <span>{{post.date}}</span>
+                                                            </div>
+                                                            <div class="single-rp-preview ">
+                                                                <a href="http://127.0.0.1:8000{% pageurl post %}" class="captions">{{ post.title }}</a>
+                                                            </div>                                                        
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            {% endif %}
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+{% endblock %}

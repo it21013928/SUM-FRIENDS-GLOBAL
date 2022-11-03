@@ -1,0 +1,82 @@
+{% load static wagtailcore_tags %}
+
+<header>
+    <div class="bg-transparent">
+        <div class="header-topbar">
+            <div class="container">
+                <ul class="topbar-left list-unstyled pull-left">
+                    <li>
+                        <a href="javascript:void(0)" class="language dropdown-text">
+                            <span>English</span>
+                            <i class="topbar-icon icons-dropdown fa fa-angle-down"></i>
+                        </a>
+                        <ul class="dropdown-topbar list-unstyled hide">
+                            <li>
+                                <a href="https://en.friends.sum.lk/" class="link">English</a>
+                            </li>
+                            <li>
+                                <a href="https://si.friends.sum.lk/" class="link">Sinhala</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="header-main">
+            <div class="container">
+                <div class="header-main-wrapper">
+                    <div class="hamburger-menu">
+                        <div class="hamburger-menu-wrapper">
+                            <div class="icons"></div>
+                        </div>
+                    </div>
+                    <div class="navbar-header">
+                        <div class="logo">
+                            <a href="index.html" class="header-logo">
+                                <img src="{% static 'images/logo/logo-color-1.png' %}" alt="" />
+                            </a>
+                        </div>
+                    </div>
+                    <nav class="navigation">
+                        <ul class="nav-links nav navbar-nav">
+                            <li {% if "/" == request.path %} class="active" {% endif %}>
+                                <a href="{% slugurl 'home' %}" class="main-menu">
+                                    <span class="text">Home</span>
+                                </a>
+                            </li>
+                            <li {% if "/about/" == request.path %} class="active" {% endif %}>
+                                <a href="{% slugurl 'about' %}" class="main-menu">
+                                    <span class="text">About</span>
+                                </a>
+                            </li>
+                            <li class="dropdown {% if '/blog/' == request.path %} active {% endif %}">
+                                <a href="{% slugurl 'blog' %}" class="main-menu">
+                                    <span class="text">blog</span>
+                                    <span class="icons-dropdown">
+                                        <i class="fa fa-angle-down"></i>
+                                    </span>
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-1">
+                                    <li>
+                                        <a href="{% slugurl 'categories' %}" class="link-page">Topics</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- <li>
+                                <a href="" class="main-menu">
+                                    <span class="text">Team</span>
+                                </a>
+                            </li> -->
+                            <li {% if "/contact/" == request.path %} class="active" {% endif %}>
+                                <a href="{% slugurl 'contact' %}" class="main-menu">
+                                    <span class="text">Contact</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>

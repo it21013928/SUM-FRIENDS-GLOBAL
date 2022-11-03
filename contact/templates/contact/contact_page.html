@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+
+{% load wagtailcore_tags %}
+
+{% block content %}
+    {% load static wagtailcore_tags wagtailuserbar %}
+    <div class="main-content">
+        <section class="page-banner contact-page">
+            <div class="container">
+                <div class="page-title-wrapper">
+                    <div class="page-title-content">
+                        <ol class="breadcrumb">
+                            <li>
+                                <a href="index.html" class="link home">Home</a>
+                            </li>
+                            <li class="active">
+                                <a href="#" class="link">contact</a>
+                            </li>
+                        </ol>
+                        <div class="clearfix"></div>
+                        <h2 class="captions">contact</h2>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- contact-organization -->
+        <section class="contact style-1 page-contact-form padding-top padding-bottom">
+            <div class="container">
+                <div class="wrapper-contact-form">
+                    <div data-wow-delay="0.5s" class="contact-wrapper wow fadeInLeft">
+                        <div class="contact-box">
+                            <h5 class="title">CONTACT FORM</h5>
+                            <p class="text">Send your ideas and feedback to us.</p>
+                            <form action="{% pageurl page %}" method="POST" class="contact-form">
+                                {% csrf_token %}
+                                {% for field in form.visible_fields %}
+                                {{ field.errors }}
+                                
+                                {% if field.id_for_label == "id_message" %}
+                                <textarea placeholder="{{ field.name }}" class="form-control form-input" name="{{ field.name }}" {% if field.field.required %} required {% endif %} id="{{ field.id_for_label }}"></textarea>
+                                {% else %}
+
+                                {% if field.id_for_label == "id_wagtailcaptcha" %}
+                                {{ field }}
+                                {% else %}
+                                <input type="{{ field.field.widget.input_type }}" placeholder="{{ field.name }}" name="{{ field.name }}" {% if field.field.required %} required {% endif %} id="{{ field.id_for_label }}" class="form-control form-input">
+                                {% endif %}
+                                {% endif %}
+                                {% endfor %}
+                                <div class="contact-submit">
+                                    <button type="submit" data-hover="SEND NOW" class="btn btn-slide">
+                                        <span class="text">send message</span>
+                                        <span class="icons fa fa-long-arrow-right"></span>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div data-wow-delay="0.5s" class="wrapper-form-images wow fadeInRight">
+                        <img src="{% static 'images/background/bg-banner-contact-form.jpg' %}" alt="" class="img-responsive">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- page-contact-map -->
+    </div>
+{% endblock %}

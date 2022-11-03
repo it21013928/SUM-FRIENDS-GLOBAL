@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+
+{% load wagtailcore_tags %}
+
+{% block content %}
+    {% load static wagtailcore_tags wagtailuserbar %}
+    <div class="main-content">
+        <section class="page-banner about-us-page">
+            <div class="container">
+                <div class="page-title-wrapper">
+                    <div class="page-title-content">
+                        <ol class="breadcrumb">
+                            <li>
+                                <a href="index.html" class="link home">Home</a>
+                            </li>
+                            <li class="active">
+                                <a href="#" class="link">about us</a>
+                            </li>
+                        </ol>
+                        <div class="clearfix"></div>
+                        <h2 class="captions">about us</h2>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="about-us layout-1 padding-top padding-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-7">
+                        <div class="group-title">
+                            <div class="sub-title">
+                                <p class="text">Hello friend</p>
+                                <i class="icons flaticon-people"></i>
+                            </div>
+                            <h2 class="main-title">It's All About Us (SUM FRIENDS)</h2>
+                        </div>
+                        <div class="about-us-wrapper">
+                            <p class="text">SUM FRIENDS is a community for anyone who loves friends. Anyone can be a friend inside our community. 
+                                You can join with our Facebook community to share your thoughts with friends worldwide. We share so many things 
+                                with you what you can enjoy, share and do with friends.</p>
+                            <div class="group-list">
+                                <ul class="list-unstyled about-us-list">
+                                    <li>
+                                        <p class="text">Volunteering Programs</p>
+                                    </li>
+                                    <li>
+                                        <p class="text">Capturing Moments</p>
+                                    </li>
+                                    <li>
+                                        <p class="text">Sharing Experiences</p>
+                                    </li>
+                                    <li>
+                                        <p class="text">Sharing Humanity</p>
+                                    </li>
+                                </ul>
+                                <ul class="list-unstyled about-us-list">
+                                    <li>
+                                        <p class="text">Adventure Tours</p>
+                                    </li>
+                                    <li>
+                                        <p class="text">Social Impacts</p>
+                                    </li>
+                                    <li>
+                                        <p class="text">Sharing Stories</p>
+                                    </li>
+                                    <li>
+                                        <p class="text">Mentoring</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-5">
+                        <div data-wow-delay="0.5s" class="about-us-image wow zoomIn">
+                            <img src="{% static 'images/homepage/about-us-1.jpg' %}" alt="" class="img-responsive">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- CONTACT SECTION -->
+    </div>
+{% endblock %}

@@ -1,0 +1,43 @@
+{% load static wagtailcore_tags %}
+
+<div class="wrapper-mobile-nav">
+    <div class="header-main">
+        <div class="menu-mobile">
+            <ul class="nav-links nav navbar-nav">
+                <li>
+                    <a href="{% slugurl 'home' %}" class="main-menu">
+                        <span class="text">Home</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{% slugurl 'about' %}" class="main-menu">
+                        <span class="text">About</span>
+                    </a>
+                </li>
+                <li class="dropdown">
+                    <a href="{% slugurl 'blog' %}" class="main-menu">
+                        <span class="text">blog</span>
+                    </a>
+                    <span class="icons-dropdown">
+                        <i class="fa fa-angle-down"></i>
+                    </span>
+                    <ul class="dropdown-menu dropdown-menu-1">
+                        <li>
+                            <a href="{% slugurl 'categories' %}" class="link-page">Topics</a>
+                        </li>
+                    </ul>
+                </li>
+                <!-- <li>
+                    <a href="contact.html" class="main-menu">
+                        <span class="text">Team</span>
+                    </a>
+                </li> -->
+                <li>
+                    <a href="{% slugurl 'contact' %}" class="main-menu">
+                        <span class="text">Contact</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

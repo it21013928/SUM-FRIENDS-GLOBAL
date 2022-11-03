@@ -1,0 +1,341 @@
+{% load wagtailcore_tags wagtailimages_tags wagtailmetadata_tags static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- <title>
+            {% block title %}
+                {% if page.seo_title %}{{ page.seo_title }}{% else %}{{ page.title }}{% endif %}
+            {% endblock %}
+            {% block title_suffix %}
+                {% wagtail_site as current_site %}
+                {% if current_site and current_site.site_name %}- {{ current_site.site_name }}{% endif %}
+            {% endblock %}
+        </title> -->
+        <!-- <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="{{ page.search_description }}" /> -->
+        {% block meta_tag %}
+            {% meta_tags %}
+        {% endblock %}
+        <!-- FONT CSS-->
+        <link type="text/css" rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700,900">
+        <link type="text/css" rel="stylesheet" href="//fonts.googleapis.com/css?family=Montserrat:400,700">
+        <link type="text/css" rel="stylesheet" href="{% static 'font/font-icon/font-awesome/css/font-awesome.css' %}">
+        <link type="text/css" rel="stylesheet" href="{% static 'font/font-icon/font-flaticon/flaticon.css' %}">
+        <!-- LIBRARY CSS-->
+        <link type="text/css" rel="stylesheet" href="{% static 'libs/bootstrap/css/bootstrap.min.css' %}">
+        <link type="text/css" rel="stylesheet" href="{% static 'libs/animate/animate.css' %}">
+        <link type="text/css" rel="stylesheet" href="{% static 'libs/slick-slider/slick.css' %}">
+        <link type="text/css" rel="stylesheet" href="{% static 'libs/slick-slider/slick-theme.css' %}">
+        <link type="text/css" rel="stylesheet" href="{% static 'libs/selectbox/css/jquery.selectbox.css' %}">
+        <link type="text/css" rel="stylesheet" href="{% static 'libs/please-wait/please-wait.css' %}">
+        <link type="text/css" rel="stylesheet" href="{% static 'libs/fancybox/css/jquery.fancybox.css?v=2.1.5' %}">
+        <link type="text/css" rel="stylesheet" href="{% static 'libs/fancybox/css/jquery.fancybox-buttons.css?v=1.0.5' %}">
+        <link type="text/css" rel="stylesheet" href="{% static 'libs/fancybox/css/jquery.fancybox-thumbs.css?v=1.0.7' %}">
+        <!-- STYLE CSS-->
+        <link type="text/css" rel="stylesheet" href="{% static 'css/layout.css' %}">
+        <link type="text/css" rel="stylesheet" href="{% static 'css/components.css' %}">
+        <link type="text/css" rel="stylesheet" href="{% static 'css/responsive.css' %}">
+        <link type="text/css" rel="stylesheet" href="{% static 'css/color.css' %}">
+        <!--link(type="text/css", rel='stylesheet', href='assets/css/color-1/color-1.css', id="color-skins")-->
+        <link type="text/css" rel="stylesheet" href="#" id="color-skins">
+        <script src="{% static 'libs/jquery/jquery-2.2.3.min.js' %}"></script>
+        <script src="{% static 'libs/js-cookie/js.cookie.js' %}"></script>
+        <script>
+            if ((Cookies.get('color-skin') != undefined) && (Cookies.get('color-skin') != 'color-1'))
+            {
+                $('#color-skins').attr('href', "{% static 'css/' %}" + Cookies.get('color-skin') + '/' + 'color.css');
+            }
+            else if ((Cookies.get('color-skin') == undefined) || (Cookies.get('color-skin') == 'color-1'))
+            {
+                $('#color-skins').attr('href', "{% static 'css/color-1/color.css' %}");
+            }
+        </script>
+        <link type="text/css" rel="stylesheet" href="{% static 'libs/nst-slider/css/jquery.nstSlider.min.css' %}">
+        <link type="text/css" rel="stylesheet" href="{% static 'libs/bootstrap-datepicker/css/bootstrap-datepicker.min.css' %}">
+    </head>
+    <body>
+        <div class="body-wrapper">
+            <!-- MENU MOBILE-->
+            {% include "menu_mobile.html" %}
+            <!-- WRAPPER CONTENT-->
+            <div class="wrapper-content">
+                <!-- HEADER-->
+                {% include "header.html" %}
+                <!-- WRAPPER-->
+                <div id="wrapper-content">
+                    <!-- MAIN CONTENT-->
+                    {% if request.GET.category %}
+                    {% if blogpages %}
+                    <div class="main-content">
+                        <section class="page-banner blog">
+                            <div class="container">
+                                <div class="page-title-wrapper">
+                                    <div class="page-title-content">
+                                        <ol class="breadcrumb">
+                                            <li>
+                                                <a href="index.html" class="link home">Home</a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="link">Categories</a>
+                                            </li>
+                                            <li class="active">
+                                                <a href="#" class="link">Category</a>
+                                            </li>
+                                        </ol>
+                                        <div class="clearfix"></div>
+                                        <h2 class="captions">{{request.GET.category}}</h2>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <section class="page-main padding-top padding-bottom">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-8 main-left blog-wrapper">
+                                        {% for post in blogpages %}
+                                            {% with post=post.specific %}
+                                                <div class="blog-post">
+                                                    <div class="blog-image">
+                                                        <a href="{% pageurl post %}" class="link">
+                                                            {% image post.banner_image fill-730x350 as post_image %}
+                                                            <img src="{{ post_image.url }}" alt="{{ post_image.title }}" class="img-responsive">
+                                                        </a>
+                                                    </div>
+                                                    <div class="blog-content">
+                                                        <div class="col-xs-2">
+                                                            <div class="row">
+                                                                <div class="date">
+                                                                    <h1 class="day">{{post.date.day}}</h1>
+                                                                    <div class="month">{{post.date | date:"M"}}</div>
+                                                                    <div class="year">{{post.date.year}}</div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-xs-10 content-wrapper">
+                                                            <a href="{% pageurl post %}" class="heading">{{ post.title }}</a>
+                                                                <h5 class="meta-info">Posted By :
+                                                                {% for authors in post.blog_authors.all %}
+                                                                    <span>{{ authors.author.name }}</span>
+                                                                {% endfor %}
+                                                            </h5>
+                                                            <p class="preview">{{ post.intro }}</p>
+                                                            <a href="{% pageurl post %}"
+                                                                class="btn btn-gray btn-fit btn-capitalize">Read More</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            {% endwith %}
+                                        {% endfor %}
+                
+                                        {% if blogpages.paginator.num_pages > 1 %}
+                                            <nav class="pagination-list margin-top70">
+                                                <ul class="pagination">
+                                                    {% if blogpages.has_previous %}
+                                                        <li>
+                                                            <a href="?page={{ blogpages.previous_page_number }}" aria-label="Previous" class="btn-pagination previous">
+                                                                <span aria-hidden="true" class="fa fa-angle-left"></span>
+                                                            </a>
+                                                        </li>
+                                                    {% endif %}
+                                                    {% for page_num in blogpages.paginator.page_range %}
+                                                        <li>
+                                                            <a href="#" class="btn-pagination {% if page_num == blogpages.number %}active{% endif %}">{{ page_num }}</a>
+                                                        </li>
+                                                    {% endfor %}
+                                                    {% if blogpages.has_next %}
+                                                    <li>
+                                                        <a href="?page={{ blogpages.next_page_number }}" aria-label="Next" class="btn-pagination next">
+                                                            <span aria-hidden="true" class="fa fa-angle-right"></span>
+                                                        </a>
+                                                    </li>
+                                                    {% endif %}
+                                                </ul>
+                                            </nav>
+                                        {% endif %}
+                                    </div>
+                                    <!-- SIDEBAR SECTION -->
+                                    <div class="col-md-4 sidebar-widget">
+                                        <div class="col-2">
+                                            <div class="col-1">
+                                                <div class="tags-widget widget">
+                                                    <div class="title-widget">
+                                                        <div class="title">MORE TOPICS</div>
+                                                    </div>
+                                                    <div class="content-widget">
+                                                        {% for category in categories %}
+                                                        <a href="{% slugurl 'categories' %}?category={{category.slug}}" class="tag">{{category.name}}</a>
+                                                        {% endfor %}
+                                                    </div>
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                    {% else %}
+                    <div class="main-content">
+                        <section class="page-banner blog">
+                            <div class="container">
+                                <div class="page-title-wrapper">
+                                    <div class="page-title-content">
+                                        <ol class="breadcrumb">
+                                            <li>
+                                                <a href="index.html" class="link home">Home</a>
+                                            </li>
+                                            <li class="active">
+                                                <a href="#" class="link">Categories</a>
+                                            </li>
+                                        </ol>
+                                        <div class="clearfix"></div>
+                                        <h2 class="captions">Categories</h2>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <div class="page-main">
+                            <div class="clearfix"></div>
+                            <div class="tour-result-main padding-top padding-bottom">
+                                <div class="container">
+                                    <div class="result-body">
+                                        <div class="row">
+                                            <div class="tours-list">
+                                                <div class="row">
+                                                    {% for category in categories %}
+                                                    <div class="col-sm-4">
+                                                        <div class="tours-layout">
+                                                            <div class="image-wrapper">
+                                                                <a href="{% slugurl 'categories' %}?category={{ category }}" class="link">
+                                                                    {% image category.icon fill-400x270 as category_image %}
+                                                                    <img src="{{ category_image.url }}" alt="{{ category_image.title }}" class="img-responsive">
+                                                                </a>
+                                                                <div class="title-wrapper">
+                                                                    <a href="{% slugurl 'categories' %}?category={{ category }}" class="title">{{ category }}</a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    {% endfor %}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endif %}
+                    {% else %}
+                    <div class="main-content">
+                        <section class="page-banner blog">
+                            <div class="container">
+                                <div class="page-title-wrapper">
+                                    <div class="page-title-content">
+                                        <ol class="breadcrumb">
+                                            <li>
+                                                <a href="index.html" class="link home">Home</a>
+                                            </li>
+                                            <li class="active">
+                                                <a href="#" class="link">Categories</a>
+                                            </li>
+                                        </ol>
+                                        <div class="clearfix"></div>
+                                        <h2 class="captions">Categories</h2>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <div class="page-main">
+                            <div class="clearfix"></div>
+                            <div class="tour-result-main padding-top padding-bottom">
+                                <div class="container">
+                                    <div class="result-body">
+                                        <div class="row">
+                                            <div class="tours-list">
+                                                <div class="row">
+                                                    {% for category in categories %}
+                                                    <div class="col-sm-4">
+                                                        <div class="tours-layout">
+                                                            <div class="image-wrapper">
+                                                                <a href="{% slugurl 'categories' %}?category={{ category }}" class="link">
+                                                                    {% image category.icon fill-400x270 as category_image %}
+                                                                    <img src="{{ category_image.url }}" alt="{{ category_image.title }}" class="img-responsive">
+                                                                </a>
+                                                                <div class="title-wrapper">
+                                                                    <a href="{% slugurl 'categories' %}?category={{ category }}" class="title">{{ category }}</a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    {% endfor %}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endif %}
+                    <!-- BUTTON BACK TO TOP-->
+                    <div id="back-top">
+                        <a href="#top" class="link">
+                            <i class="fa fa-angle-double-up"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- FOOTER-->
+                {% include "footer.html" %}
+            </div>
+        </div>
+        <script>
+            if ((Cookies.get('color-skin') != undefined) && (Cookies.get('color-skin') != 'color-1'))
+            {
+                $('.logo .header-logo img ,.logo-footer img, .group-logo .img-logo').attr('src', "{% static 'images/logo/logo-white-' %}" + Cookies.get('color-skin') + '.png');
+                $('.logo-black img').attr('src', "{% static 'images/logo/logo-black-' %}" + Cookies.get('color-skin') + '.png');
+            }
+            else if ((Cookies.get('color-skin') == undefined) || (Cookies.get('color-skin') == 'color-1'))
+            {
+                $('.logo .header-logo img , .logo-footer img, .group-logo .img-logo').attr('src', "{% static 'images/logo/logo-white-color-1.png' %}");
+                $('.logo-black img').attr('src', "{% static 'images/logo/logo-black-color-1.png' %}");
+            }
+        </script>
+        <!-- LIBRARY JS-->
+        <script src="{% static 'libs/bootstrap/js/bootstrap.min.js' %}"></script>
+        <script src="{% static 'libs/detect-browser/browser.js' %}"></script>
+        <script src="{% static 'libs/smooth-scroll/jquery-smoothscroll.js' %}"></script>
+        <script src="{% static 'libs/wow-js/wow.min.js' %}"></script>
+        <script src="{% static 'libs/slick-slider/slick.min.js' %}"></script>
+        <script src="{% static 'libs/selectbox/js/jquery.selectbox-0.2.js' %}"></script>
+        <script src="{% static 'libs/please-wait/please-wait.min.js' %}"></script>
+        <script src="{% static 'libs/fancybox/js/jquery.fancybox.js' %}"></script>
+        <script src="{% static 'libs/fancybox/js/jquery.fancybox-buttons.js' %}"></script>
+        <script src="{% static 'libs/fancybox/js/jquery.fancybox-thumbs.js' %}"></script>
+        <!--script(src="assets/libs/parallax/jquery.data-parallax.min.js")-->
+        <!-- MAIN JS-->
+        <script src="{% static 'js/main.js' %}"></script>
+        <!-- LOADING JS FOR PAGE-->
+        <script src="{% static 'libs/bootstrap-datepicker/js/bootstrap-datepicker.min.js' %}"></script>
+        <script src="{% static 'libs/nst-slider/js/jquery.nstSlider.min.js' %}"></script>
+        <script src="{% static 'libs/plus-minus-input/plus-minus-input.js' %}"></script>
+        <script src="{% static 'js/pages/sidebar.js' %}"></script>
+        <script src="{% static 'js/pages/result.js' %}"></script>
+        <script>
+            var logo_str = "{% static 'images/logo/logo-black-color-1.png' %}";
+            if (Cookies.set('color-skin'))
+            {
+                logo_str = "{% static 'images/logo/logo-black-' %}" + Cookies.set('color-skin') + '.png';
+            }
+            window.loading_screen = window.pleaseWait(
+            {
+                logo: logo_str,
+                backgroundColor: '#fff',
+                loadingHtml: "<div class='spinner sk-spinner-wave'><div class='rect1'></div><div class='rect2'></div><div class='rect3'></div><div class='rect4'></div><div class='rect5'></div></div>",
+            });
+        </script>
+    </body>
+</html>
